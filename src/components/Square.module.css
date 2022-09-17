@@ -1,0 +1,18 @@
+.square {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  font-size: 100px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.selected {
+  background-color: #d8ce78 !important;
+}
+
+.square > img {
+  cursor: grab;
+}

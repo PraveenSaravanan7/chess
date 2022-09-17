@@ -1,0 +1,38 @@
+export interface PieceMap {
+  [id: number]: { img: string; color: "white" | "black" };
+}
+
+export const initPiecesMap: PieceMap = {
+  0: { img: "assets/peice/rook_white.png", color: "white" },
+  1: { img: "assets/peice/knight_white.png", color: "white" },
+  2: { img: "assets/peice/bishop_white.png", color: "white" },
+  3: { img: "assets/peice/queen_white.png", color: "white" },
+  4: { img: "assets/peice/king_white.png", color: "white" },
+  5: { img: "assets/peice/bishop_white.png", color: "white" },
+  6: { img: "assets/peice/knight_white.png", color: "white" },
+  7: { img: "assets/peice/rook_white.png", color: "white" },
+  8: { img: "assets/peice/pawn_white.png", color: "white" },
+  9: { img: "assets/peice/pawn_white.png", color: "white" },
+  10: { img: "assets/peice/pawn_white.png", color: "white" },
+  11: { img: "assets/peice/pawn_white.png", color: "white" },
+  12: { img: "assets/peice/pawn_white.png", color: "white" },
+  13: { img: "assets/peice/pawn_white.png", color: "white" },
+  14: { img: "assets/peice/pawn_white.png", color: "white" },
+  15: { img: "assets/peice/pawn_white.png", color: "white" },
+  48: { img: "assets/peice/pawn_black.png", color: "black" },
+  49: { img: "assets/peice/pawn_black.png", color: "black" },
+  50: { img: "assets/peice/pawn_black.png", color: "black" },
+  51: { img: "assets/peice/pawn_black.png", color: "black" },
+  52: { img: "assets/peice/pawn_black.png", color: "black" },
+  53: { img: "assets/peice/pawn_black.png", color: "black" },
+  54: { img: "assets/peice/pawn_black.png", color: "black" },
+  55: { img: "assets/peice/pawn_black.png", color: "black" },
+  56: { img: "assets/peice/rook_black.png", color: "black" },
+  57: { img: "assets/peice/knight_black.png", color: "black" },
+  58: { img: "assets/peice/bishop_black.png", color: "black" },
+  59: { img: "assets/peice/queen_black.png", color: "black" },
+  60: { img: "assets/peice/king_black.png", color: "black" },
+  61: { img: "assets/peice/bishop_black.png", color: "black" },
+  62: { img: "assets/peice/knight_black.png", color: "black" },
+  63: { img: "assets/peice/rook_black.png", color: "black" },
+};
