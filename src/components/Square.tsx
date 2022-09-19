@@ -1,5 +1,5 @@
 import React, { DragEvent, useState } from "react";
-import { PieceMap } from "../constant";
+import { Colors, PieceMap } from "../constant";
 
 import styles from "./Square.module.css";
 
@@ -9,7 +9,7 @@ interface SquareProps {
   selected: boolean;
   onSelect: (id: number) => void;
   movePeice: (from: number, to: number) => void;
-  turn: "white" | "black";
+  turn: Colors;
   hilight: boolean;
 }
 

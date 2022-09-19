@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { initPiecesMap } from "../constant";
+import { Colors, initPiecesMap } from "../constant";
 import * as Libs from "../libs";
 import styles from "./Board.module.css";
 import { Square } from "./Square";
@@ -7,7 +7,7 @@ import { Square } from "./Square";
 export const Board = () => {
   const [selectedSquare, setSelectedSquare] = useState<number | null>(null);
   const [pieces, setPieces] = useState(initPiecesMap);
-  const [turn, setTurn] = useState<"white" | "black">("white");
+  const [turn, setTurn] = useState<Colors>(Colors.WHITE);
   const [possibleMoves, setPossibleMoves] = useState<Set<number>>(new Set());
 
   const updateSelectedSquare = (id: number | null) => {
@@ -29,7 +29,7 @@ export const Board = () => {
         return newPieces;
       });
       updateSelectedSquare(null);
-      setTurn((prev) => (prev === "white" ? "black" : "white"));
+      setTurn((prev) => (prev === Colors.WHITE ? Colors.BLACK : Colors.WHITE));
     }
   };
 

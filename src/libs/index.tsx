@@ -1,4 +1,4 @@
-import { PieceMap } from "../constant";
+import { Colors, PieceMap, PieceType } from "../constant";
 
 export const possibleMoves = (id: number, pieces: PieceMap): Set<number> => {
   const piece = pieces[id];
@@ -14,23 +14,23 @@ export const possibleMoves = (id: number, pieces: PieceMap): Set<number> => {
   };
 
   switch (type) {
-    case "pawn":
-      if (color === "white") {
+    case PieceType.PAWN:
+      if (color === Colors.WHITE) {
         if (row === 1 && !pieces[id + 8] && !pieces[id + 16])
           moves.add(id + 16);
         if (!pieces[id + 8]) moves.add(id + 8);
-        if (pieces[id + 7]?.color === "black") moves.add(id + 7);
-        if (pieces[id + 9]?.color === "black") moves.add(id + 9);
+        if (pieces[id + 7]?.color === Colors.BLACK) moves.add(id + 7);
+        if (pieces[id + 9]?.color === Colors.BLACK) moves.add(id + 9);
       } else {
         if (row === 6 && !pieces[id - 8] && !pieces[id - 16])
           moves.add(id - 16);
         if (!pieces[id - 8]) moves.add(id - 8);
-        if (pieces[id - 7]?.color === "white") moves.add(id - 7);
-        if (pieces[id - 9]?.color === "white") moves.add(id - 9);
+        if (pieces[id - 7]?.color === Colors.WHITE) moves.add(id - 7);
+        if (pieces[id - 9]?.color === Colors.WHITE) moves.add(id - 9);
       }
       break;
 
-    case "rook":
+    case PieceType.ROOK:
       for (let i = row + 1; i < 8; i++) {
         addMove(i * 8 + col);
         if (pieces[i * 8 + col]) break;
@@ -49,7 +49,7 @@ export const possibleMoves = (id: number, pieces: PieceMap): Set<number> => {
       }
       break;
 
-    case "knight":
+    case PieceType.KNIGHT:
       if (row + 2 < 8) {
         if (col + 1 < 8) addMove((row + 2) * 8 + col + 1);
         if (col - 1 >= 0) addMove((row + 2) * 8 + col - 1);
@@ -68,7 +68,7 @@ export const possibleMoves = (id: number, pieces: PieceMap): Set<number> => {
       }
       break;
 
-    case "bishop":
+    case PieceType.BISHOP:
       for (let i = 1; row + i < 8 && col + i < 8; i++) {
         addMove((row + i) * 8 + col + i);
         if (pieces[(row + i) * 8 + col + i]) break;
@@ -87,7 +87,7 @@ export const possibleMoves = (id: number, pieces: PieceMap): Set<number> => {
       }
       break;
 
-    case "queen":
+    case PieceType.QUEEN:
       for (let i = 1; row + i < 8 && col + i < 8; i++) {
         addMove((row + i) * 8 + col + i);
         if (pieces[(row + i) * 8 + col + i]) break;
@@ -122,7 +122,7 @@ export const possibleMoves = (id: number, pieces: PieceMap): Set<number> => {
       }
       break;
 
-    case "king":
+    case PieceType.KING:
       for (let i = -1; i <= 1; i++) {
         for (let j = -1; j <= 1; j++) {
           if (i === 0 && j === 0) continue;
