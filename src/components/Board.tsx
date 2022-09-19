@@ -9,7 +9,7 @@ export const Board = () => {
   const [turn, setTurn] = useState<"white" | "black">("white");
 
   const updateSelectedSquare = (id: number | null) => {
-    if (id === null) setSelectedSquare(null);
+    if (id === null || selectedSquare === id) setSelectedSquare(null);
     else {
       const piece = pieces[id];
       if (piece && piece.color === turn) setSelectedSquare(id);

@@ -23,7 +23,7 @@ export const Square = ({
   const row = Math.floor(id / 8);
   const col = id % 8;
   const isBlack = (row + col) % 2 === 1;
-  const color = isBlack ? "#7fa650" : "#e9ffce";
+  const color = isBlack ? "#b7c0d8" : "#e8edf9";
 
   const classname = `${styles.square} ${selected ? styles.selected : ""}`;
 
@@ -53,8 +53,8 @@ export const Square = ({
         <img
           alt=""
           src={piece.img}
-          width="90px"
-          height="90px"
+          width="80px"
+          height="80px"
           draggable={piece.color === turn}
           onDragStart={onDragStart}
         />
