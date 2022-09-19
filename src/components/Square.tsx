@@ -10,6 +10,7 @@ interface SquareProps {
   onSelect: (id: number) => void;
   movePeice: (from: number, to: number) => void;
   turn: "white" | "black";
+  hilight: boolean;
 }
 
 export const Square = ({
@@ -19,13 +20,16 @@ export const Square = ({
   onSelect,
   movePeice,
   turn,
+  hilight,
 }: SquareProps) => {
   const row = Math.floor(id / 8);
   const col = id % 8;
   const isBlack = (row + col) % 2 === 1;
   const color = isBlack ? "#b7c0d8" : "#e8edf9";
 
-  const classname = `${styles.square} ${selected ? styles.selected : ""}`;
+  const classname = `${styles.square} ${selected ? styles.selected : ""} ${
+    hilight ? styles.hilight : ""
+  }`;
 
   const handleClick = () => onSelect(id);
 

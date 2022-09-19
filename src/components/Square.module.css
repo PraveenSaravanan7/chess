@@ -10,9 +10,13 @@
 }
 
 .selected {
-  background-color: #fff25a !important;
+  background-color: #fff47a !important;
 }
 
 .square > img {
   cursor: grab;
+}
+
+.hilight {
+  background-color: red !important;
 }
