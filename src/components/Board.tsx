@@ -22,6 +22,7 @@ export const Board = () => {
   const movePeice = (from: number, to: number) => {
     if (pieces[from]?.color === pieces[to]?.color) return;
     if (possibleMoves.has(to)) {
+      setPossibleMoves(new Set());
       setPieces((prev) => {
         const newPieces = { ...prev };
         newPieces[to] = newPieces[from];
@@ -46,7 +47,7 @@ export const Board = () => {
           onSelect={updateSelectedSquare}
           movePeice={movePeice}
           turn={turn}
-          hilight={possibleMoves.has(id)}
+          highlight={possibleMoves.has(id)}
         />
       );
 
@@ -57,7 +58,7 @@ export const Board = () => {
     setPossibleMoves(() =>
       selectedSquare ? Libs.possibleMoves(selectedSquare, pieces) : new Set()
     );
-  }, [pieces, selectedSquare]);
+  }, [selectedSquare]);
 
   return <div className={styles.board}>{squares}</div>;
 };
