@@ -60,5 +60,11 @@ export const Board = () => {
     );
   }, [selectedSquare]);
 
-  return <div className={styles.board}>{squares}</div>;
+  const scale = String(Math.min(window.innerWidth, window.innerHeight) / 900);
+
+  return (
+    <div className={styles.board} style={{ scale }}>
+      {squares}
+    </div>
+  );
 };
