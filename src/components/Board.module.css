@@ -2,7 +2,48 @@
   width: 800px;
   height: 800px;
   background-color: #fff;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1); */
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+}
+
+.boardWrapper {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  column-gap: 60px;
+}
+
+.scoreBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 60px;
+  width: 200px;
+}
+
+.scoreBoard > div {
+  background-color: #ce9aff50;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.removedPeicesContainer img {
+  width: 40px;
+}
+
+.scoreBoard > div.active {
+  background-color: #fff;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+  color: black;
 }
